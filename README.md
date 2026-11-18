@@ -29,4 +29,4 @@ Personagens, cenários, interfaces, músicas e efeitos foram criados para este p
 **Disciplina:** Projeto de Extensão em Sistemas Interativos.  
 **Integrantes:** Erik Pereira de Almeida (líder, RA 924115897), Felipe Gabriel Cruz Medeiros (RA 924100952), Letícia da Silva Oliveira (RA 924103216), Gabriel Santos de Jesus (RA 924110011) e Marcos Daniel Ribeiro Siriano (RA 924115034).
 **Página itch.io:** preencher após publicar.
-**Código-fonte:** preencher o link do repositório ou pasta compartilhada.
+**Código-fonte:** https://github.com/erik336pereira/da-rua-ao-estrelado (repositório privado; solicite acesso para visualizar).

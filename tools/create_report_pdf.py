@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 SHOTS = DOCS / "screenshots"
 OUT = DOCS / "Projeto_de_Sistemas_Interativos.pdf"
+REPO_URL = "https://github.com/erik336pereira/da-rua-ao-estrelado"
 NAVY = colors.HexColor("#15345B")
 BLUE = colors.HexColor("#168CC8")
 GOLD = colors.HexColor("#F2BD42")
@@ -201,19 +202,19 @@ def build():
     for text in [
         "Telas descritas: menu inicial, controles, configurações de volume, pausa, fase, derrota e vitória.",
         "Pacotes preparados: versão Web em HTML5 para o itch.io e versão executável para Windows.",
-        "A página ainda não foi publicada. Os campos abaixo devem ser preenchidos após a criação da página e do repositório.",
+        "A página do jogo no itch.io ainda aguarda publicação. O código-fonte está disponível no repositório GitHub indicado nesta seção.",
     ]:
         add_bullet(story, text)
     story += [P("7. REFERÊNCIAS E ENDEREÇOS", "Subhead")]
     refs = [
         ("URL da página do jogo no itch.io", "[Preencher após publicar]"),
-        ("URL do código-fonte / repositório", "[Preencher quando disponível]"),
+        ("URL do código-fonte / repositório", f'<link href="{REPO_URL}" color="#168CC8">{REPO_URL}</link> (privado; solicitar acesso para visualizar)'),
         ("Imagens e recursos", "Arte, áudio, interface e código originais; engine Godot 4.7.2."),
     ]
     for label, value in refs:
         story.append(P(f"<b>{label}:</b> {value}", "Body2"))
     story += [Spacer(1, 0.12 * inch), P("ESTADO DA ENTREGA", "Label"),
-              P("Projeto preparado para revisão acadêmica. Inserir os links públicos do itch.io e do repositório antes do envio final à plataforma da faculdade.", "Body2")]
+              P("Projeto preparado para revisão acadêmica. O link do código-fonte está informado acima; o endereço do itch.io será incluído após a publicação.", "Body2")]
 
     doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
     print(OUT)

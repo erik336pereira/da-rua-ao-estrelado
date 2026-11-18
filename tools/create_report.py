@@ -16,6 +16,7 @@ SHOTS = DOCS / "screenshots"
 ASSETS = DOCS / "assets"
 ASSETS.mkdir(parents=True, exist_ok=True)
 OUT = DOCS / "Projeto_de_Sistemas_Interativos.docx"
+REPO_URL = "https://github.com/erik336pereira/da-rua-ao-estrelado"
 
 NAVY = "15345B"
 BLUE = "168CC8"
@@ -30,6 +31,30 @@ def set_cell_shading(cell, fill):
     shd = OxmlElement("w:shd")
     shd.set(qn("w:fill"), fill)
     tc_pr.append(shd)
+
+
+def add_hyperlink(paragraph, text, url):
+    relationship_id = paragraph.part.relate_to(
+        url,
+        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+        is_external=True,
+    )
+    hyperlink = OxmlElement("w:hyperlink")
+    hyperlink.set(qn("r:id"), relationship_id)
+    run = OxmlElement("w:r")
+    properties = OxmlElement("w:rPr")
+    color = OxmlElement("w:color")
+    color.set(qn("w:val"), BLUE)
+    underline = OxmlElement("w:u")
+    underline.set(qn("w:val"), "single")
+    properties.append(color)
+    properties.append(underline)
+    run.append(properties)
+    text_node = OxmlElement("w:t")
+    text_node.text = text
+    run.append(text_node)
+    hyperlink.append(run)
+    paragraph._p.append(hyperlink)
 
 
 def set_cell_margins(cell, top=90, start=120, bottom=90, end=120):
@@ -416,11 +441,11 @@ def build():
     doc.add_heading("Materiais e publicação", level=2)
     add_bullet(doc, "Telas descritas: menu inicial, controles, configurações de volume, pausa, fase, derrota e vitória.")
     add_bullet(doc, "Pacotes preparados: versão Web em HTML5 para o itch.io e versão executável para Windows.")
-    add_bullet(doc, "O projeto ainda não foi publicado. Os campos abaixo devem ser preenchidos após a criação da página e do repositório.")
+    add_bullet(doc, "A página do jogo no itch.io ainda aguarda publicação. O código-fonte está disponível no repositório GitHub indicado nesta seção.")
     doc.add_heading("7. REFERÊNCIAS E ENDEREÇOS", level=2)
     fields = [
         ("URL da página do jogo no itch.io", "[Preencher após publicar]"),
-        ("URL do código-fonte / repositório", "[Preencher quando disponível]"),
+        ("URL do código-fonte / repositório", REPO_URL + " (privado; solicitar acesso para visualizar)"),
         ("Imagens e recursos", "Arte, áudio, interface e código originais do projeto; engine Godot 4.7.2."),
     ]
     for label, value in fields:
@@ -428,13 +453,17 @@ def build():
         p.paragraph_format.space_after = Pt(6)
         r = p.add_run(label + ": ")
         r.bold = True
-        p.add_run(value)
+        if label == "URL do código-fonte / repositório":
+            add_hyperlink(p, REPO_URL, REPO_URL)
+            p.add_run(" (privado; solicitar acesso para visualizar)")
+        else:
+            p.add_run(value)
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(16)
     r = p.add_run("Estado da entrega")
     r.bold = True
     r.font.color.rgb = RGBColor.from_string(BLUE)
-    doc.add_paragraph("Projeto preparado para revisão acadêmica. Inserir os links públicos do itch.io e do repositório antes do envio final à plataforma da faculdade.")
+    doc.add_paragraph("Projeto preparado para revisão acadêmica. O link do código-fonte está informado acima; o endereço do itch.io será incluído após a publicação.")
 
     doc.save(OUT)
     print(OUT)
