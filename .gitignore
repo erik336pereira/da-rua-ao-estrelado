@@ -1,0 +1,19 @@
+# Godot generated cache and editor state
+.godot/
+.godot-appdata/
+
+# Local review captures, temporary renders, and Python bytecode
+tmp/
+**/__pycache__/
+*.py[cod]
+
+# Exported game builds and upload bundles are kept out of the source repository
+builds/
+release/
+
+# Local Godot editor profiles and export templates
+feature_profiles/
+script_templates/
+text_editor_themes/
+export_templates/
+
