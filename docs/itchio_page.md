@@ -34,4 +34,6 @@ Atravesse uma fase de plataforma inspirada no futebol, recolha recursos e enfren
 
 Projeto acadêmico da disciplina Projeto de Extensão em Sistemas Interativos, orientado pelo professor Leandro Fernandes da Mota. Pixel art, trilhas, efeitos e código produzidos para este projeto. Integrantes: Erik Pereira de Almeida (líder, RA 924115897), Felipe Gabriel Cruz Medeiros (RA 924100952), Letícia da Silva Oliveira (RA 924103216), Gabriel Santos de Jesus (RA 924110011) e Marcos Daniel Ribeiro Siriano (RA 924115034).
 
-> A página ainda não está publicada. Inserir aqui, após publicação, o link público do jogo e o repositório do código-fonte.
+Página pública do jogo: [Da Rua ao Estrelado](https://erik336.itch.io/da-rua-ao-estrelado).
+
+Código-fonte: [repositório no GitHub](https://github.com/erik336pereira/da-rua-ao-estrelado) (privado; é necessário solicitar acesso).

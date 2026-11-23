@@ -16,6 +16,7 @@ DOCS = ROOT / "docs"
 SHOTS = DOCS / "screenshots"
 OUT = DOCS / "Projeto_de_Sistemas_Interativos.pdf"
 REPO_URL = "https://github.com/erik336pereira/da-rua-ao-estrelado"
+ITCH_URL = "https://erik336.itch.io/da-rua-ao-estrelado"
 NAVY = colors.HexColor("#15345B")
 BLUE = colors.HexColor("#168CC8")
 GOLD = colors.HexColor("#F2BD42")
@@ -202,19 +203,19 @@ def build():
     for text in [
         "Telas descritas: menu inicial, controles, configurações de volume, pausa, fase, derrota e vitória.",
         "Pacotes preparados: versão Web em HTML5 para o itch.io e versão executável para Windows.",
-        "A página do jogo no itch.io ainda aguarda publicação. O código-fonte está disponível no repositório GitHub indicado nesta seção.",
+        "O jogo está publicado no itch.io e pode ser acessado pelo endereço informado nesta seção. O código-fonte está no repositório GitHub privado indicado abaixo.",
     ]:
         add_bullet(story, text)
     story += [P("7. REFERÊNCIAS E ENDEREÇOS", "Subhead")]
     refs = [
-        ("URL da página do jogo no itch.io", "[Preencher após publicar]"),
+        ("URL da página do jogo no itch.io", f'<link href="{ITCH_URL}" color="#168CC8">{ITCH_URL}</link>'),
         ("URL do código-fonte / repositório", f'<link href="{REPO_URL}" color="#168CC8">{REPO_URL}</link> (privado; solicitar acesso para visualizar)'),
         ("Imagens e recursos", "Arte, áudio, interface e código originais; engine Godot 4.7.2."),
     ]
     for label, value in refs:
         story.append(P(f"<b>{label}:</b> {value}", "Body2"))
     story += [Spacer(1, 0.12 * inch), P("ESTADO DA ENTREGA", "Label"),
-              P("Projeto preparado para revisão acadêmica. O link do código-fonte está informado acima; o endereço do itch.io será incluído após a publicação.", "Body2")]
+              P("Projeto publicado no itch.io. O endereço da página do jogo e o link do código-fonte estão informados acima.", "Body2")]
 
     doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
     print(OUT)
