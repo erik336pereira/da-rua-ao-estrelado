@@ -78,7 +78,7 @@ def set_repeat_table_header(row):
 
 def add_page_number(paragraph):
     paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    run = paragraph.add_run("AS AVENTURAS DE UM JOGADOR  •  ")
+    run = paragraph.add_run("DA RUA AO ESTRELADO  •  ")
     run.font.size = Pt(8)
     run.font.color.rgb = RGBColor.from_string(MUTED)
     fld = OxmlElement("w:fldSimple")
@@ -261,7 +261,7 @@ def build():
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_before = Pt(48)
     p.paragraph_format.space_after = Pt(16)
-    r = p.add_run("AS AVENTURAS\nDE UM JOGADOR")
+    r = p.add_run("DA RUA AO\nESTRELADO")
     r.bold = True
     r.font.name = "Arial"
     r.font.size = Pt(32)
@@ -286,7 +286,7 @@ def build():
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.space_before = Pt(14)
-    r = p.add_run("AS AVENTURAS DE UM JOGADOR")
+    r = p.add_run("DA RUA AO ESTRELADO")
     r.bold = True
     r.font.size = Pt(20)
     r.font.color.rgb = RGBColor.from_string(NAVY)
@@ -432,7 +432,7 @@ def build():
     add_heading(doc, "6. PÁGINA DO JOGO E DISTRIBUIÇÃO")
     add_label(doc, "Título da página")
     p = doc.add_paragraph()
-    p.add_run("As aventuras de um jogador").bold = True
+    p.add_run("Da Rua ao Estrelado").bold = True
     add_label(doc, "Texto sugerido para itch.io")
     doc.add_paragraph("Uma partida inteira separa você do estádio! Corra, pule, use a cabeçada e o carrinho, e chute bolas para abrir caminho. Desvie dos cartões do juiz, fuja do goleiro que salta em sua direção e enfrente o chefão Cartão Vermelho. Recolha corações e bolas, sobreviva ao percurso e entre em campo.")
     p = doc.add_paragraph()

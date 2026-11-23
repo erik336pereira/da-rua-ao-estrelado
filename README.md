@@ -1,4 +1,4 @@
-# As aventuras de um jogador
+# Da Rua ao Estrelado
 
 Jogo de plataforma 2D de futebol feito em Godot 4.7.2, com gráficos desenhados no próprio jogo e trilhas e efeitos sonoros originais.
 

@@ -1,4 +1,4 @@
-# As aventuras de um jogador
+# Da Rua ao Estrelado
 
 Uma partida inteira separa você do estádio! Corra, pule, use a cabeçada e o carrinho, e chute bolas para abrir caminho. Desvie dos cartões do juiz, fuja do goleiro que salta em sua direção e enfrente o chefão: um cartão vermelho vivo, com braços e pernas, que arremessa cartões e golpeia de perto. Recolha corações e bolas, sobreviva ao percurso e entre em campo.
 

@@ -83,7 +83,7 @@ def header_footer(canvas, doc):
     canvas.setFillColor(MUTED)
     canvas.drawString(0.72 * inch, h - 0.32 * inch, "PROJETO DE EXTENSÃO EM SISTEMAS INTERATIVOS")
     canvas.setFont("Helvetica", 7.5)
-    canvas.drawRightString(w - 0.72 * inch, 0.34 * inch, f"AS AVENTURAS DE UM JOGADOR  •  {doc.page}")
+    canvas.drawRightString(w - 0.72 * inch, 0.34 * inch, f"DA RUA AO ESTRELADO  •  {doc.page}")
     canvas.restoreState()
 
 
@@ -91,7 +91,7 @@ def build():
     doc = SimpleDocTemplate(
         str(OUT), pagesize=A4, rightMargin=0.72 * inch, leftMargin=0.72 * inch,
         topMargin=0.58 * inch, bottomMargin=0.58 * inch,
-        title="Projeto de Extensão em Sistemas Interativos — As aventuras de um jogador",
+        title="Projeto de Extensão em Sistemas Interativos — Da Rua ao Estrelado",
         author="Projeto de Extensão em Sistemas Interativos",
     )
     story = []
@@ -100,14 +100,14 @@ def build():
     story += [Spacer(1, 0.3 * inch), P("UNIVERSIDADE NOVE DE JULHO — UNINOVE", "CoverSmall"),
               P("DIRETORIA DOS CURSOS DE INFORMÁTICA", "CoverSmall"), Spacer(1, 0.12 * inch),
               P("PROJETO DE EXTENSÃO EM SISTEMAS INTERATIVOS", "Label"), Spacer(1, 0.4 * inch),
-              P("AS AVENTURAS<br/>DE UM JOGADOR", "DocTitle"),
+              P("DA RUA AO<br/>ESTRELADO", "DocTitle"),
               P("Jogo de plataforma 2D com tema de futebol", "CoverSmall"), Spacer(1, 0.25 * inch)]
     story.append(Image(str(SHOTS / "gameplay.png"), width=5.95 * inch, height=3.35 * inch, kind="proportional"))
     story += [P("Cena da fase — arte original em pixel art.", "Small"), Spacer(1, 0.65 * inch),
               P("SÃO PAULO<br/>2026", "Center")]
 
     # Página 2 — folha de rosto e integrantes
-    story += [PageBreak(), Spacer(1, 0.15 * inch), P("AS AVENTURAS DE UM JOGADOR", "Section"),
+    story += [PageBreak(), Spacer(1, 0.15 * inch), P("DA RUA AO ESTRELADO", "Section"),
               Spacer(1, 0.3 * inch), P("Projeto desenvolvido na disciplina Projeto de Extensão em Sistemas Interativos, como jogo de plataforma 2D para computador com a engine Godot.", "Center"),
               Spacer(1, 0.25 * inch), P("INTEGRANTES DO GRUPO", "Label")]
     members = [
@@ -195,7 +195,7 @@ def build():
 
     # Página 6 — publicação e endereços editáveis
     story += [PageBreak(), P("6. PÁGINA DO JOGO E DISTRIBUIÇÃO", "Section"), P("TÍTULO DA PÁGINA", "Label"),
-              P("<b>As aventuras de um jogador</b>", "Body2"), P("TEXTO SUGERIDO PARA ITCH.IO", "Label"),
+              P("<b>Da Rua ao Estrelado</b>", "Body2"), P("TEXTO SUGERIDO PARA ITCH.IO", "Label"),
               P("Uma partida inteira separa você do estádio! Corra, pule, use a cabeçada e o carrinho, e chute bolas para abrir caminho. Desvie dos cartões do juiz, fuja do goleiro que salta em sua direção e enfrente o chefão Cartão Vermelho. Recolha corações e bolas, sobreviva ao percurso e entre em campo.", "Body2"),
               P("Jogo individual de plataforma 2D para computador. Escolha a versão para Windows para baixar ou jogue a versão Web diretamente no navegador.", "Body2"),
               P("MATERIAIS E PUBLICAÇÃO", "Subhead")]

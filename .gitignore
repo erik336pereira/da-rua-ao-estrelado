@@ -10,6 +10,7 @@ tmp/
 # Exported game builds and upload bundles are kept out of the source repository
 builds/
 release/
+Exportação do Jogo/
 
 # Local Godot editor profiles and export templates
 feature_profiles/

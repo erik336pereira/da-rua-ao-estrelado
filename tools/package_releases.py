@@ -4,7 +4,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 RELEASES = ROOT / "release" / "itchio"
-WINDOWS = ROOT / "builds" / "windows" / "As aventuras de um jogador.exe"
+WINDOWS = ROOT / "builds" / "windows" / "Da Rua ao Estrelado.exe"
 WEB = ROOT / "builds" / "web"
 SOURCE_ITEMS = ["assets", "docs", "scenes", "scripts", "tools", "project.godot", "export_presets.cfg", "README.md"]
 
@@ -18,14 +18,14 @@ def make_windows():
         raise FileNotFoundError(WINDOWS)
     readme = RELEASES / "README-Windows.txt"
     put_text(readme, """
-    AS AVENTURAS DE UM JOGADOR — WINDOWS
+    DA RUA AO ESTRELADO — WINDOWS
 
-    Extraia o conteúdo deste ZIP e execute “As aventuras de um jogador.exe”.
+    Extraia o conteúdo deste ZIP e execute “Da Rua ao Estrelado.exe”.
     Controles: A/D ou setas para mover; Espaço/W/↑ para pular; J cabeçada;
     K carrinho; L chute; P ou Esc pausa; Enter inicia/continua; R reinicia na pausa.
     Jogo de plataforma 2D individual. Projeto acadêmico — Godot 4.7.2.
     """)
-    out = RELEASES / "As-aventuras-de-um-jogador-Windows.zip"
+    out = RELEASES / "Da-Rua-ao-Estrelado-Windows.zip"
     with ZipFile(out, "w", ZIP_DEFLATED, compresslevel=6) as z:
         z.write(WINDOWS, WINDOWS.name)
         z.write(readme, readme.name)
@@ -39,14 +39,14 @@ def make_web():
             raise FileNotFoundError(path)
     readme = WEB / "README-itchio.txt"
     put_text(readme, """
-    AS AVENTURAS DE UM JOGADOR — WEB
+    DA RUA AO ESTRELADO — WEB
 
     Projeto HTML5 exportado no modo Web do Godot 4.7.2, sem threads.
     Para publicar no itch.io, envie este conteúdo como projeto HTML jogável.
     O arquivo index.html precisa permanecer junto aos arquivos de dados.
     Controles: A/D ou setas; Espaço/W/↑; J; K; L; P/Esc; Enter; R na pausa.
     """)
-    out = RELEASES / "As-aventuras-de-um-jogador-Web.zip"
+    out = RELEASES / "Da-Rua-ao-Estrelado-Web.zip"
     with ZipFile(out, "w", ZIP_DEFLATED, compresslevel=6) as z:
         for path in sorted(WEB.iterdir()):
             if path.is_file() and path.name != "README-itchio.txt":
@@ -56,7 +56,7 @@ def make_web():
 
 
 def make_source():
-    out = RELEASES / "Projeto-fonte-As-aventuras-de-um-jogador.zip"
+    out = RELEASES / "Projeto-fonte-Da-Rua-ao-Estrelado.zip"
     with ZipFile(out, "w", ZIP_DEFLATED, compresslevel=6) as z:
         for item in SOURCE_ITEMS:
             path = ROOT / item

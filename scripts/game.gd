@@ -552,9 +552,8 @@ func _draw() -> void:
 func _draw_menu() -> void:
 	_draw_background(0.0)
 	draw_rect(Rect2(0,0,1280,720), Color(0.02,0.05,0.12,0.28))
-	_draw_pixel_text("DA RUA AO ESTRELADO",80,128,2,GOLD,Color("7a3240"))
-	_draw_pixel_text("AS AVENTURAS",80,166,6,CREAM,Color("813e45"))
-	_draw_pixel_text("DE UM JOGADOR",80,229,5,BLUE,Color("142f57"))
+	_draw_pixel_text("DA RUA AO",80,151,6,CREAM,Color("813e45"))
+	_draw_pixel_text("ESTRELADO",80,214,6,BLUE,Color("142f57"))
 	draw_rect(Rect2(80,309,420,4), GOLD)
 	draw_string(ThemeDB.fallback_font, Vector2(80,355), "Uma partida inteira separa você do estádio.", HORIZONTAL_ALIGNMENT_LEFT, -1, 20, CREAM)
 	draw_string(ThemeDB.fallback_font, Vector2(80,387), "Drible os perigos, guarde a bola e enfrente o chefão.", HORIZONTAL_ALIGNMENT_LEFT, -1, 17, Color("c8d8e8"))
