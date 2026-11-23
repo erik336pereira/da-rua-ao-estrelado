@@ -41,10 +41,24 @@ def make_web():
     put_text(readme, """
     DA RUA AO ESTRELADO — WEB
 
-    Projeto HTML5 exportado no modo Web do Godot 4.7.2, sem threads.
-    Para publicar no itch.io, envie este conteúdo como projeto HTML jogável.
-    O arquivo index.html precisa permanecer junto aos arquivos de dados.
-    Controles: A/D ou setas; Espaço/W/↑; J; K; L; P/Esc; Enter; R na pausa.
+    COMO PUBLICAR NO ITCH.IO
+    1. Crie ou edite a página do jogo e escolha o tipo HTML.
+    2. Envie este arquivo ZIP como projeto HTML jogável.
+    3. Ative a incorporação do jogo na página e salve.
+    O ZIP contém index.html e os arquivos de dados necessários. Não os separe.
+
+    COMO JOGAR
+    Na página do itch.io, clique em Run game. Não é necessário instalar o Godot.
+    Para testar o ZIP no próprio computador, extraia todos os arquivos para uma
+    pasta, abra o PowerShell nessa pasta e execute: py -m http.server 8000
+    Depois acesse http://localhost:8000 no navegador. Se py não funcionar, tente
+    python -m http.server 8000. Não abra index.html por duplo clique; navegadores
+    bloqueiam alguns arquivos da exportação quando carregados pelo endereço file://.
+    Para desligar o servidor local, pressione Ctrl+C no terminal.
+
+    CONTROLES
+    A/D ou setas: mover; Espaço/W/↑: pular; J: cabeçada; K: carrinho;
+    L: chutar bola; P/Esc: pausar; Enter: iniciar/continuar; R: reiniciar na pausa.
     """)
     out = RELEASES / "Da-Rua-ao-Estrelado-Web.zip"
     with ZipFile(out, "w", ZIP_DEFLATED, compresslevel=6) as z:

@@ -4,6 +4,12 @@ Uma partida inteira separa você do estádio! Corra, pule, use a cabeçada e o c
 
 **Jogo individual de plataforma 2D para computador.** Escolha a versão para Windows para baixar ou jogue a versão Web diretamente no navegador.
 
+## Como jogar no navegador
+
+Na página do itch.io, clique em **Run game**. A versão Web roda no navegador e não precisa instalar o Godot.
+
+Se baixar o arquivo da versão Web para jogar localmente, extraia todos os arquivos para uma pasta. Abra o PowerShell nessa pasta e execute `py -m http.server 8000`; depois acesse `http://localhost:8000` no navegador. Caso `py` não funcione, tente `python -m http.server 8000`. Mantenha os arquivos juntos e não abra `index.html` por duplo clique. Para encerrar o servidor local, pressione **Ctrl+C** no terminal.
+
 ## Controles
 
 - **A / D** ou **← / →** — mover
