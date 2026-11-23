@@ -36,4 +36,4 @@ Projeto acadêmico da disciplina Projeto de Extensão em Sistemas Interativos, o
 
 Página pública do jogo: [Da Rua ao Estrelado](https://erik336.itch.io/da-rua-ao-estrelado).
 
-Código-fonte: [repositório no GitHub](https://github.com/erik336pereira/da-rua-ao-estrelado) (privado; é necessário solicitar acesso).
+Código-fonte: [repositório público no GitHub](https://github.com/erik336pereira/da-rua-ao-estrelado).

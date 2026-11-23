@@ -442,11 +442,11 @@ def build():
     doc.add_heading("Materiais e publicação", level=2)
     add_bullet(doc, "Telas descritas: menu inicial, controles, configurações de volume, pausa, fase, derrota e vitória.")
     add_bullet(doc, "Pacotes preparados: versão Web em HTML5 para o itch.io e versão executável para Windows.")
-    add_bullet(doc, "O jogo está publicado no itch.io e pode ser acessado pelo endereço informado nesta seção. O código-fonte está no repositório GitHub privado indicado abaixo.")
+    add_bullet(doc, "O jogo está publicado no itch.io e pode ser acessado pelo endereço informado nesta seção. O código-fonte está disponível publicamente no GitHub pelo endereço indicado abaixo.")
     doc.add_heading("7. REFERÊNCIAS E ENDEREÇOS", level=2)
     fields = [
         ("URL da página do jogo no itch.io", ITCH_URL),
-        ("URL do código-fonte / repositório", REPO_URL + " (privado; solicitar acesso para visualizar)"),
+        ("URL do código-fonte / repositório", REPO_URL),
         ("Imagens e recursos", "Arte, áudio, interface e código originais do projeto; engine Godot 4.7.2."),
     ]
     for label, value in fields:
@@ -458,7 +458,6 @@ def build():
             add_hyperlink(p, ITCH_URL, ITCH_URL)
         elif label == "URL do código-fonte / repositório":
             add_hyperlink(p, REPO_URL, REPO_URL)
-            p.add_run(" (privado; solicitar acesso para visualizar)")
         else:
             p.add_run(value)
     p = doc.add_paragraph()
@@ -466,7 +465,7 @@ def build():
     r = p.add_run("Estado da entrega")
     r.bold = True
     r.font.color.rgb = RGBColor.from_string(BLUE)
-    doc.add_paragraph("Projeto publicado no itch.io. O endereço da página do jogo e o link do código-fonte estão informados acima.")
+    doc.add_paragraph("Projeto publicado no itch.io e com código-fonte público no GitHub. Os dois endereços estão informados acima.")
 
     doc.save(OUT)
     print(OUT)

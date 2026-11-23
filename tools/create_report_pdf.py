@@ -203,19 +203,19 @@ def build():
     for text in [
         "Telas descritas: menu inicial, controles, configurações de volume, pausa, fase, derrota e vitória.",
         "Pacotes preparados: versão Web em HTML5 para o itch.io e versão executável para Windows.",
-        "O jogo está publicado no itch.io e pode ser acessado pelo endereço informado nesta seção. O código-fonte está no repositório GitHub privado indicado abaixo.",
+        "O jogo está publicado no itch.io e pode ser acessado pelo endereço informado nesta seção. O código-fonte está disponível publicamente no GitHub pelo endereço indicado abaixo.",
     ]:
         add_bullet(story, text)
     story += [P("7. REFERÊNCIAS E ENDEREÇOS", "Subhead")]
     refs = [
         ("URL da página do jogo no itch.io", f'<link href="{ITCH_URL}" color="#168CC8">{ITCH_URL}</link>'),
-        ("URL do código-fonte / repositório", f'<link href="{REPO_URL}" color="#168CC8">{REPO_URL}</link> (privado; solicitar acesso para visualizar)'),
+        ("URL do código-fonte / repositório", f'<link href="{REPO_URL}" color="#168CC8">{REPO_URL}</link>'),
         ("Imagens e recursos", "Arte, áudio, interface e código originais; engine Godot 4.7.2."),
     ]
     for label, value in refs:
         story.append(P(f"<b>{label}:</b> {value}", "Body2"))
     story += [Spacer(1, 0.12 * inch), P("ESTADO DA ENTREGA", "Label"),
-              P("Projeto publicado no itch.io. O endereço da página do jogo e o link do código-fonte estão informados acima.", "Body2")]
+              P("Projeto publicado no itch.io e com código-fonte público no GitHub. Os dois endereços estão informados acima.", "Body2")]
 
     doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
     print(OUT)
